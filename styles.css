@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Making sure padding and border are included in the box's width and height */
+    outline: none;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+html{
+    font-size: 62.5%; /* Making 1rem = 10px */
+}
+
+.nav-bar{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu{
+    display: none;
+}
+
+.nav-list{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link::before{
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 5rem;
+    background-color: #d50000;
+    left: -20%;
+    transform: rotate(-40deg) translateX(-4rem);
+    transform-origin: left bottom;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+
+.nav-link{
+    font-size: 1.5rem;
+    color: #fff;
+    width: 15rem;
+    margin: 0 3rem;
+    text-transform: uppercase;
+    border: 0.1rem solid #fff;
+    text-align: center;
+    padding: 0.2rem 0;
+    letter-spacing: 0.1rem;
+    position: relative; 
+    overflow: hidden;
+
+}
+
+.nav-link:hover::before{
+    left: 110%;
+
+}
+
+.logo-img{
+    height: 6rem;
+}
+
+.page-btn{
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+}
+
+.arrow{
+    width: 4rem;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.arrow:hover{
+    opacity: 0.9;
+}
+
+.left{
+    left: 1.5rem;
+    transform: rotate(-90deg);
+    visibility: hidden;
+}
+
+.right{
+    right: 1.5rem;
+    transform: rotate(90deg);
+}
+
+.progress-wrapper{
+    position: fixed;
+    z-index: 100;
+    bottom: 2rem;
+    left: 3rem;
+}
+
+.progress{
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.progress h2{
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.circle-wrapper{
+    display: flex;
+}
+
+.circle{
+    width: 1rem;
+    height: 1rem;
+    border: 0.1rem solid #fff;
+    border-radius: 50%;
+    margin: 0 0.3rem;
+    transition: background 0.2s;
+}
+
+.circle-1{
+    background: #d50000;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+section{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    transition: left 1.5s;
+}
+
+.section-1{
+    z-index: 50;
+}
+
+.section-wrapper{
+    width: inherit;
+    height: inherit;
+}
+
+.section-1-wrapper{
+    background: linear-gradient(rgba(0, 0, 0 ,0.5), rgba(0, 0, 0, 0.4)), url(images/section-1-bg.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.section-1-heading-wrapper{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section-1-heading{
+    font-size: 10rem;
+    font-weight: 300;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: .1rem;
+    border-bottom: .2rem solid #d50000;
+    text-align: right;
+    user-select: none; /* Doesn't allow the user to select the text */
+}
+
+.section-2{
+    z-index: 40;
+}
+
+.section-2-wrapper{
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(images/section-2-bg.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-evenly;
+}
+
+.sale{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sale-bag{
+    opacity: 0.9;
+    width: 40rem;
+}
+
+.sale-btn{
+    width: 20rem;
+    height: 5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    background-color: transparent;
+    color: #fff;
+    margin-top: 4rem;
+    border: .1rem solid #fff;
+    transition: background-color 0.3s;
+}
+
+.sale-btn:hover{
+    background-color: #d50000;
+    cursor: pointer;
+}
+
+.wine-bottle{
+    opacity: 0.6;
+    width: 80rem;
+}
+
+.section-3{
+    z-index: 30;
+    background-color: #000;
+}
+
+.section-3-wrapper{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url(images/section-3-bg.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1.5s;
+}
+
+.grapes-frame{
+    width: 90rem;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.grapes{
+    width: 40rem;
+    position: absolute;
+    transition: transform 1s;
+    opacity: unset;
+}
+
+.grapes:hover{
+    opacity: 1;
+    transform: scale(2);
+}
+
+.section-3-heading{
+    font-size: 20rem;
+    color: #ccc;
+    text-transform: uppercase;
+    transform: rotate(-20deg);
+    text-align: center;
+    text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0);
+    user-select: none;
+}
+
+.new-wines{
+    width: 50rem;
+    border: 0.1rem solid #fff;
+    padding: 1rem;
+    opacity: 0.8;
+}
+
+.section-4{
+    z-index: 20;
+}
+
+.section-4-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-4-bg{
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url(images/section-4-bg.jpg) center no-repeat;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(0.5rem);
+}
+
+.section-4-heading{
+    font-size: 7rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #d50000;
+    user-select: none;
+}
+
+.section-5{
+    z-index: 10;
+}
+
+.section-5-wrapper{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(images/section-5-bg.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li{
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: #ddd;
+    margin: 1rem 0;
+}
+
+li:first-child{
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-img{
+    width: 60rem;
+    margin: 0 15rem;
+    opacity: 0.8;
+}
+
+p{
+    position: absolute;
+    bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #eee;
+
+}
+
+
+@media(max-width: 1500px){
+    .sale-bag{
+        width: 30rem;
+    }
+
+    .wine-bottle{
+        width: 60rem;
+    }
+
+    .sale-btn{
+        width: 15rem;
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+
+    .footer-img{
+        width: 40rem;
+        margin: 0 10rem;
+    }
+
+    .section-1-heading{
+        font-size: 8rem;
+    }
+}
+
+@media(max-width: 1270px){
+    .section-1-heading{
+        font-size: 7rem;
+    }
+}
+
+@media(max-width: 1200px){
+    .footer-img{
+        display: none;
+    }
+
+    .footer-list{
+        padding: 0 5rem;
+    }
+}
+
+
+@media(max-width: 1150px){
+    .wine-bottle{
+        display: none;
+    }
+
+    .sale-bag{
+        width: 35rem;
+    }
+
+    .sale-btn{
+        width: 18rem;
+        height: 6rem;
+        font-size: 1.8rem;
+    }
+
+    .grapes-frame{
+        width: 75rem;
+    }
+    
+    .grapes{
+        width: 33rem;
+    }
+
+    .section-3-heading{
+        font-size: 15rem;
+    }
+
+    .nav-link{
+        margin: 0 1.5rem;
+    }
+}
+
+@media(max-width: 1080px){
+    .section-1-heading{
+        font-size: 6rem;
+    }
+}
+
+@media(max-width: 1000px){
+    .grapes-frame{
+        width: 65rem;
+    }
+    
+    .grapes{
+        width: 27rem;
+    }
+
+    .section-3-heading{
+        font-size: 13rem;
+    }
+
+    .nav-list{
+        position: absolute;
+        top: 5rem;
+        right: -21rem;
+        flex-direction: column;
+        background-color: #333;
+        height: calc(100vh - 5rem);
+        justify-content: start;
+        padding: 2rem;
+        border-radius: 0.5rem 0 0 0;
+        transition: right 0.4s;
+    }
+
+    .change .nav-list{
+        right: 0;
+    }
+
+    .nav-link{
+        margin: 1rem;
+    }
+
+    .menu{
+        width: 4rem;
+        height: 3rem;
+        background-color: transparent;
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu-line{
+        height: 0.3rem;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .change .menu-line-1{
+        transform: rotate(40deg)
+        translate(1rem, 1rem);
+    }
+
+    .change .menu-line-2{
+        transform: translate(0, 2rem);
+    }
+
+    .change .menu-line-3{
+        transform: rotate(-40deg)
+        translate(0.8rem, -1rem);
+    }
+
+    .nav-bar{
+        justify-content: start;
+        padding-left: 2rem;
+    }
+
+}
+
+@media(max-width: 940px){
+    .section-1-heading{
+        font-size: 5rem;
+    }
+}
+
+@media(max-width: 750px){
+    .left{
+        left: 2rem;
+    }
+
+    .right{
+        right: 2rem;
+    }
+
+    .section-1-heading{
+        font-size: 4rem;
+    }
+
+    .sale-bag{
+        width: 25rem;
+    }
+
+    .sale-btn{
+        height: 4rem;
+        width: 13;
+        font-size: 1.3rem;
+    }
+
+    .grapes-frame{
+        width: 50rem;
+    }
+    
+    .grapes{
+        width: 22rem;
+    }
+
+    .section-3-heading{
+        font-size: 9rem;
+    }
+
+    .new-wines{
+        width: 30rem;
+    }
+
+    .section-4-heading{
+        font-size: 5rem;
+    }
+
+    .section-5-wrapper{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-list{
+        margin: 2rem 0;
+    }
+}
